@@ -2,13 +2,13 @@
 {
     public static class Check
     {
-        public static void CheckStringOnNullOrWhiteSpase(string input, string exceptionMessage)
+        public static void StringOnNullOrWhiteSpase(string input, string exceptionMessage)
         {
             if(string.IsNullOrWhiteSpace(input))
                 throw new ArgumentException(exceptionMessage);
         }
 
-        public static void CheckPriceOnNegativeValue(decimal input, string exceptionMessage)
+        public static void PriceOnNegativeValue(decimal input, string exceptionMessage)
         { 
             if(input < 0 )
                 throw new ArgumentException(exceptionMessage);

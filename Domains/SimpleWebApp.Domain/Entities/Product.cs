@@ -18,9 +18,9 @@ namespace SimpleWebApp.Domain.Entities
             decimal sellPrice) 
             : base(id)
         {
-            Check.CheckStringOnNullOrWhiteSpase(productName, "Родукт обязательно должен содержать название.");
-            Check.CheckPriceOnNegativeValue(purchasePrice, "Цена покупи должна быть положительная.");
-            Check.CheckPriceOnNegativeValue(sellPrice, "Цена продажи должна быть положительная.");
+            Check.StringOnNullOrWhiteSpase(productName, "Родукт обязательно должен содержать название.");
+            Check.PriceOnNegativeValue(purchasePrice, "Цена покупи должна быть положительная.");
+            Check.PriceOnNegativeValue(sellPrice, "Цена продажи должна быть положительная.");
 
             ProductName = productName;
             ItemsNumber = itemsNumber;
