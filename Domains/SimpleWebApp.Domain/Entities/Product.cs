@@ -6,14 +6,14 @@ namespace SimpleWebApp.Domain.Entities
     public class Product : BaseEntity
     {
         public string ProductName { get; private set; }
-        public uint ItemsNumber { get; private set; }
+        public uint ProductNumber { get; private set; }
         public decimal PurchasePrice { get; private set; }
         public decimal SellPrice { get; private set; }
 
         public Product(
             Guid id,
             string productName,
-            uint itemsNumber,
+            uint productNumber,
             decimal purchasePrice,
             decimal sellPrice) 
             : base(id)
@@ -23,9 +23,18 @@ namespace SimpleWebApp.Domain.Entities
             Check.PriceOnNegativeValue(sellPrice, "Цена продажи должна быть положительная.");
 
             ProductName = productName;
-            ItemsNumber = itemsNumber;
+            ProductNumber = productNumber;
             PurchasePrice = purchasePrice;
             SellPrice = sellPrice;
+        }
+
+        public static Guid GenerateNewGuid()
+            => Guid.NewGuid();
+
+        public Product Update(Product productUpdateParameter)
+        {
+            SellPrice= productUpdateParameter.SellPrice;
+            return this;
         }
     }
 }

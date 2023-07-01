@@ -1,6 +1,6 @@
 ﻿namespace SimpleWebApp.Infrastructure
 {
-    public class Bootstrap
+    public static class Bootstrap
     {
 
     }
