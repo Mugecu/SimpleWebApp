@@ -226,3 +226,9 @@ Thumbs.db
 /SimpleWebApp/.vs/ProjectEvaluation/simplewebapp.projects.v5.2
 /SimpleWebApp/obj/Debug/net6.0/SimpleWebApp.csproj.AssemblyReference.cache
 /Infrastuctures/SimpleWebApp.Infrastructure/obj/Debug/net6.0/SimpleWebApp.Infrastructure.csproj.AssemblyReference.cache
+/SimpleWebApp/obj/Debug/net6.0/SimpleWebApp.assets.cache
+/SimpleWebApp/obj/project.assets.json
+/SimpleWebApp/obj/project.nuget.cache
+/SimpleWebApp/obj/SimpleWebApp.csproj.nuget.dgspec.json
+/SimpleWebApp/obj/SimpleWebApp.csproj.nuget.g.props
+/SimpleWebApp/obj/SimpleWebApp.csproj.nuget.g.targets
