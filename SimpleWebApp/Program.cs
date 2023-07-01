@@ -2,8 +2,10 @@ namespace SimpleWebApp
 {
     public class Program
     {
+        private const string _defaultCorsPolicyName = "AllowOrigins";
         public static void Main(string[] args)
         {
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -19,6 +21,7 @@ namespace SimpleWebApp
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseCors(_defaultCorsPolicyName);
 
             app.UseAuthorization();
 
