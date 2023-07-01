@@ -221,13 +221,5 @@ __pycache__/
 # Windows thumbnail cache files
 Thumbs.db
 /.gitignore
-/SimpleWebApp/obj/Debug/net6.0/SimpleWebApp.csproj.AssemblyReference.cache
-/Infrastuctures/SimpleWebApp.Infrastructure/obj/Debug/net6.0/SimpleWebApp.Infrastructure.csproj.AssemblyReference.cache
-/SimpleWebApp/obj/Debug/net6.0/SimpleWebApp.assets.cache
-/SimpleWebApp/obj/project.assets.json
-/SimpleWebApp/obj/project.nuget.cache
-/SimpleWebApp/obj/SimpleWebApp.csproj.nuget.dgspec.json
-/SimpleWebApp/obj/SimpleWebApp.csproj.nuget.g.props
-/SimpleWebApp/obj/SimpleWebApp.csproj.nuget.g.targets
+/Infrastuctures/SimpleWebApp.Infrastructure/obj/*
 /SimpleWebApp/obj/*
-/.gitignore
