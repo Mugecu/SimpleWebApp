@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace SimpleWebApp
 {
@@ -15,6 +16,7 @@ namespace SimpleWebApp
             //// Add services to the container.
             builder.Services.AddRazorPages();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddCors(GetCorsOptions());
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

@@ -232,3 +232,5 @@ Thumbs.db
 /SimpleWebApp/obj/SimpleWebApp.csproj.nuget.dgspec.json
 /SimpleWebApp/obj/SimpleWebApp.csproj.nuget.g.props
 /SimpleWebApp/obj/SimpleWebApp.csproj.nuget.g.targets
+/SimpleWebApp/obj/
+/.gitignore
