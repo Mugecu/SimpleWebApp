@@ -221,3 +221,6 @@ __pycache__/
 # Windows thumbnail cache files
 Thumbs.db
 /.gitignore
+/SimpleWebApp/.vs/SimpleWebApp/v17/.futdcache.v2
+/SimpleWebApp/.vs/ProjectEvaluation/simplewebapp.metadata.v5.2
+/SimpleWebApp/.vs/ProjectEvaluation/simplewebapp.projects.v5.2

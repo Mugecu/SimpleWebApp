@@ -11,6 +11,19 @@
         "runtime": {
           "bin/placeholder/SimpleWebApp.Domain.dll": {}
         }
+      },
+      "SimpleWebApp.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "SimpleWebApp.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SimpleWebApp.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SimpleWebApp.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -19,11 +32,17 @@
       "type": "project",
       "path": "../Domains/SimpleWebApp.Domain/SimpleWebApp.Domain.csproj",
       "msbuildProject": "../Domains/SimpleWebApp.Domain/SimpleWebApp.Domain.csproj"
+    },
+    "SimpleWebApp.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastuctures/SimpleWebApp.Infrastructure/SimpleWebApp.Infrastructure.csproj",
+      "msbuildProject": "../Infrastuctures/SimpleWebApp.Infrastructure/SimpleWebApp.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "SimpleWebApp.Domain >= 1.0.0"
+      "SimpleWebApp.Domain >= 1.0.0",
+      "SimpleWebApp.Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -61,6 +80,9 @@
           "projectReferences": {
             "C:\\QUalitica\\Domains\\SimpleWebApp.Domain\\SimpleWebApp.Domain.csproj": {
               "projectPath": "C:\\QUalitica\\Domains\\SimpleWebApp.Domain\\SimpleWebApp.Domain.csproj"
+            },
+            "C:\\QUalitica\\Infrastuctures\\SimpleWebApp.Infrastructure\\SimpleWebApp.Infrastructure.csproj": {
+              "projectPath": "C:\\QUalitica\\Infrastuctures\\SimpleWebApp.Infrastructure\\SimpleWebApp.Infrastructure.csproj"
             }
           }
         }

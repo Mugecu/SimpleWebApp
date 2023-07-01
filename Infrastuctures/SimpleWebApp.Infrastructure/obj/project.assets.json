@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "SimpleWebApp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/SimpleWebApp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SimpleWebApp.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SimpleWebApp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Domains/SimpleWebApp.Domain/SimpleWebApp.Domain.csproj",
+      "msbuildProject": "../../Domains/SimpleWebApp.Domain/SimpleWebApp.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "SimpleWebApp.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\MUGECU\\.nuget\\packages\\": {},
@@ -39,7 +58,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\QUalitica\\Domains\\SimpleWebApp.Domain\\SimpleWebApp.Domain.csproj": {
+              "projectPath": "C:\\QUalitica\\Domains\\SimpleWebApp.Domain\\SimpleWebApp.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

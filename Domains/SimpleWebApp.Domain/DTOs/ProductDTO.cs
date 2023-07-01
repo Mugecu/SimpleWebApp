@@ -10,7 +10,7 @@ namespace SimpleWebApp.Domain.DTOs
         public decimal PurchasePrice { get; set; }
         public decimal SellPrice { get; set; }
 
-        public ProductDTO ToDto(Product model)
+        public ProductDTO ToDto(Product? model)
         {
             if (model == null)
                 return default;

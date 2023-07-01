@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domains\SimpleWebApp.Domain\SimpleWebApp.Domain.csproj" />
+    <ProjectReference Include="..\Infrastuctures\SimpleWebApp.Infrastructure\SimpleWebApp.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

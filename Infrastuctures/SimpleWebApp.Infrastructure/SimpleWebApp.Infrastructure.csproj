@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domains\SimpleWebApp.Domain\SimpleWebApp.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
