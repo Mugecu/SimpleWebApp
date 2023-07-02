@@ -19,7 +19,14 @@ namespace SimpleWebApp.Controllers
             _warehouseRepository = warehouseRepository;
         }
 
-        [HttpPut("accept/warewouse/{warehoueId}")]
+        /// <summary>
+        /// Добавляе продукты на склад
+        /// </summary>
+        /// <param name="warehouseId"></param>
+        /// <param name="addedProduct"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"> Отсутствуют товары на складе или сам склад.</exception>
+        [HttpPut("accept/warehouse/{warehoueId}")]
         public async Task AddProductsAsync([FromRoute] Guid warehouseId, [FromBody] GoodsValuesDTO addedProduct)
         {
             var warehouse = await _warehouseRepository.GetAsync(warehouseId);
@@ -34,14 +41,22 @@ namespace SimpleWebApp.Controllers
             await _warehouseRepository.SaveAsync();
         }
 
-        [HttpPut("sell/warewouse/{warehoueId}")]
-        public async Task SellProductsAsync([FromRoute] Guid warehouseId, [FromBody] GoodsValuesDTO addedProduct)
+        /// <summary>
+        /// Продает продукты со склада
+        /// </summary>
+        /// <param name="warehouseId"> Идентификатор склада</param>
+        /// <param name="sellProducts">Продукты для продажи</param>
+        /// <returns></returns>
+        /// <exception cref="Exception">Отсутствует склад.</exception>
+        
+        [HttpPut("sell/warehouse/{warehoueId}")]
+        public async Task SellProductsAsync([FromRoute] Guid warehouseId, [FromBody] GoodsValuesDTO sellProducts)
         {
             var warehouse = await _warehouseRepository.GetAsync(warehouseId);
             if (warehouse == null)
                 throw new Exception($"Склад с идентиифиатором {warehouseId} не существует.");
 
-            warehouse.AddProducts(addedProduct.Goods);
+            warehouse.AddProducts(sellProducts.Goods);
             await _warehouseRepository.SaveAsync();
         }
     }

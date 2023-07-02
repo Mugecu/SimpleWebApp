@@ -18,6 +18,11 @@ namespace SimpleWebApp.Controllers
             _warehouseRepository = warehouseRepository;
         }
 
+        /// <summary>
+        /// Возвращает склад.
+        /// </summary>
+        /// <param name="id">Идентификатор склада</param>
+        /// <returns>Склад</returns>
         [HttpGet("{id}")]
         public async Task<WarehouseDTO> GetAsync([FromRoute] Guid id)
         {
@@ -26,6 +31,11 @@ namespace SimpleWebApp.Controllers
             return new WarehouseDTO().ToDto(warehouse);
         }
 
+        /// <summary>
+        /// Создает склад.
+        /// </summary>
+        /// <param name="warehouse">Параметры склада</param>
+        /// <returns>Идентификатор склада</returns>
         [HttpPost]
         public async Task<Guid> CreateAsync([FromBody] WarehouseDTO warehouse)
         {
