@@ -18,6 +18,9 @@ namespace SimpleWebApp
             builder.Services.AddDbContext<SimpleWebAppContext>(options =>
                     options.UseNpgsql(AppSettingsProvider.Configuration.GetConnectionString("SimpleWebDb")), ServiceLifetime.Scoped);
 
+            //registred DI container
+            builder.Services.AddSimpleWebAppRepository();
+
             builder.Services.AddCors(GetCorsOptions());
             var app = builder.Build();
 

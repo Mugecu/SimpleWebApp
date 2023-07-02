@@ -1,23 +1,27 @@
-﻿using SimpleWebApp.Domain.Abstracts;
+﻿using Microsoft.EntityFrameworkCore;
+using SimpleWebApp.Domain.Abstracts;
 using SimpleWebApp.Domain.Entities;
 
 namespace SimpleWebApp.Infrastructure.Repositories
 {
     public class ProductEfRepository : Repository<Product>
     {
-        public override Task<Product> CreateAsync(Product root)
+        private readonly SimpleWebAppContext _context;
+        public ProductEfRepository(SimpleWebAppContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public override async Task<Product> CreateAsync(Product root)
+        {
+            return (await _context.Set<Product>().AddAsync(root)).Entity;
         }
 
-        public override Task<Product?> GetAsync(Guid id)
+        public override async Task<Product?> GetAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _context.Set<Product>().FirstOrDefaultAsync(p => p.Id == id);
         }
 
-        public override Task SaveAsync()
-        {
-            throw new NotImplementedException();
-        }
+        public override async Task SaveAsync()
+            => await _context.SaveChangesAsync();
     }
 }
