@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using SimpleWebApp.Infrastructure;
@@ -17,6 +16,9 @@ namespace SimpleWebApp
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<SimpleWebAppContext>(options =>
                     options.UseNpgsql(AppSettingsProvider.Configuration.GetConnectionString("SimpleWebDb")), ServiceLifetime.Scoped);
+
+            //registred DI container
+            builder.Services.AddSimpleWebAppRepository();
 
             builder.Services.AddCors(GetCorsOptions());
             var app = builder.Build();

@@ -16,6 +16,11 @@ namespace SimpleWebApp.Controllers
             _productRepository = productRepository;
         }
 
+        /// <summary>
+        /// Возвращает продукт по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор продукта.</param>
+        /// <returns>Продукт</returns>
         [HttpGet]
         public async Task<ProductDTO> GetAsync([FromRoute] Guid id)
         {
@@ -23,14 +28,25 @@ namespace SimpleWebApp.Controllers
             return new ProductDTO().ToDto(product);
         }
 
+        /// <summary>
+        /// Создает продукт.
+        /// </summary>
+        /// <param name="product">Параметры продукта.</param>
+        /// <returns>Идетификатор созданного продукта.</returns>
         [HttpPost]
         public async Task<Guid> CreateAsync([FromBody] ProductDTO product)
         {
             var createdProduct = await _productRepository.CreateAsync(product.ToModel());
+            await _productRepository.SaveAsync();
             return createdProduct?.Id ?? Guid.Empty;
         }
 
-        [HttpPut]
+        /// <summary>
+        /// Обновляет продажную цену продукта.
+        /// </summary>
+        /// <param name="productId">Идентификатор продукта</param>
+        /// <param name="product">Параметры обновления</param>
+        [HttpPut("{productId}")]
         public async Task UpdateAsync([FromRoute] Guid productId, [FromBody] ProductDTO product)
         {
             var updateParameters = product.ToModel();
