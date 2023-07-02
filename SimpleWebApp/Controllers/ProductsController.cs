@@ -27,6 +27,7 @@ namespace SimpleWebApp.Controllers
         public async Task<Guid> CreateAsync([FromBody] ProductDTO product)
         {
             var createdProduct = await _productRepository.CreateAsync(product.ToModel());
+            await _productRepository.SaveAsync();
             return createdProduct?.Id ?? Guid.Empty;
         }
 
