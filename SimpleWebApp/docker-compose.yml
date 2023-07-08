@@ -1,0 +1,35 @@
+version: '3.4'
+services:
+  app:
+    container_name: simplewebapp
+    image: ${DOCKER_REGISTRY-}simplewebapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '4200:4200'
+    depends_on:
+      - 'postgres-db'
+    networks:
+      - my-network
+
+  postgres-db:
+    ports:
+      - '5432:5432'
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSGRES_DB: SimpleWebDb
+    volumes:
+      - 'simplewebapp-volume:/var/lib/postgresql/data'
+    image: 'postgres:13.4'
+    networks:
+      - my-network  
+
+volumes:
+  simplewebapp-volume:
+
+networks:
+  my-network:
+    driver: bridge
