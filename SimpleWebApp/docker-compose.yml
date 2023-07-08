@@ -1,8 +1,8 @@
 version: '3.4'
 services:
   app:
-    container_name: simplewebapp
-    image: ${DOCKER_REGISTRY-}simplewebapp
+    container_name: SimpleWebApp
+    image: SimpleWebApp
     build:
       context: .
       dockerfile: Dockerfile
@@ -22,8 +22,8 @@ services:
       POSTGRES_PASSWORD: postgres
       POSGRES_DB: SimpleWebDb
     volumes:
-      - 'simplewebapp-volume:/var/lib/postgresql/data'
-    image: 'postgres:13.4'
+      - simplewebapp-volume:/var/lib/postgresql/data
+    image: postgres:13.4
     networks:
       - my-network  
 
